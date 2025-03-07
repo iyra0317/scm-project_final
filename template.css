@@ -1,0 +1,172 @@
+body {
+    background-image: url("https://learn.canva.com/wp-content/uploads/2016/10/accent-color-for-resume.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.udiv{
+    font-size: 7vh;
+   text-align: center;
+    color:rgb(37, 80, 80);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding:1vh;
+    margin:1vh;
+}
+.container{
+    display:flex;
+}
+.container2{
+    display:flex
+}
+#proflix a{
+    text-decoration: none;
+}
+#prozon a{
+    text-decoration: none;
+}
+#prokart a{
+    text-decoration: none;
+}
+#proggle a{
+    text-decoration: none;
+}
+#prochat a{
+    text-decoration: none;
+}
+#program a{
+    text-decoration: none;
+}
+
+#proflix{
+    background-color: black;
+    color:red;
+    border-radius: 80px;
+    font-size: 6vh;
+    font-family:'Times New Roman', Times, serif;
+    justify-content:center;
+    width:30%;
+    height:30%;
+    text-align:center;
+    padding:4vh;
+    margin:4vh;
+}
+#prozon:before {
+transition: 0.5s all ease; position: absolute;
+top: 0; left: 50%; right: 50%; bottom: 0; opacity: 0; content: '';
+
+background-color:
+• #FF0072;
+z-index: -1;}
+#prozon:hover, #prozon:focus {
+color:
+white;}
+#prozon:hover:before, #prozon:focus:before {transition: 0.5s all ease; left: 0; right: 0; opacity: 1;}
+#prozon:active {
+transform: scale(0.9);}
+#prozon:hover{
+    background-color: rgb(111, 111, 228);
+   }
+#proflix:hover{
+    background-color:rgb(241, 103, 103);
+}
+#prokart:hover{
+    background-color:rgb(102, 102, 232);
+}
+#proggle:hover{
+    background-color: yellowgreen;
+}
+#prochat:hover{
+    background-color: rgb(73, 58, 58);
+}
+#program:hover{
+    background-color:rgb(245, 245, 93);
+}
+#prozon{
+    background-color:rgb(221, 160, 79);
+    color:aliceblue;
+    border-radius: 80px;
+    font-size: 6vh;
+    font-family:'Times New Roman', Times, serif;
+    justify-content:center;
+    width:30%;
+    text-align: center;
+    height:30%;
+    padding:4vh;
+    margin:4vh;
+}
+#prokart{
+    background-color:yellow;
+    color:dodgerblue;
+    border-radius: 80px;
+    font-size: 6vh;
+    font-family:'Times New Roman', Times, serif;
+    justify-content:center;
+    text-align:center;
+    width:30%;
+    height:30%;
+    padding:4vh;
+    margin:4vh;
+}
+#proggle{
+    background-color:white;
+    color:green;
+    border-radius: 80px;
+    font-size: 6vh;
+    font-family:'Times New Roman', Times, serif;
+    justify-content:center;
+    text-align:center;
+    width:30%;
+    height:30%;
+    padding:4vh;
+    margin:4vh;
+}
+#prochat{
+    background-color:rgb(236, 236, 38);
+    color:azure;
+    border-radius: 80px;
+    font-size: 6vh;
+    font-family:'Times New Roman', Times, serif;
+    justify-content:center;
+    text-align:center;
+    width:30%;
+    height:30%;
+    padding:4vh;
+    margin:4vh;
+}
+#program{
+    background-color:rgb(190, 43, 126);
+    color:azure;
+    border-radius: 80px;
+    font-size: 6vh;
+    font-family:'Times New Roman', Times, serif;
+    justify-content:center;
+    text-align:center;
+    width:30%;
+    height:30%;
+    padding:4vh;
+    margin:4vh;
+}
+@keyframes moveIn {
+  
+    50%,
+    100% {
+      transform: translateY(0em)
+    }
+  
+    0% {
+      opacity: 0;
+      filter: blur(10px);
+  
+    }
+  
+    100% {
+      opacity: 1;
+      filter: blur(0px);
+    }
+  }
+#proflix,
+#prozon,
+#prochat,
+#proggle,
+#prokart,
+#program{ animation-name: moveIn;
+    animation-duration: 2000ms;}

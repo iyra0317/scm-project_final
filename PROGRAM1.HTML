@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROgram</title>
+
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png" type="image/png">
+
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color:whitesmoke;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #fa7e1e, #d62976);
+            color: #fff;
+            font-size: 18px;
+            padding: 12px 40px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 10px 0;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #d62976, #fa7e1e);
+            transform: scale(1.05);
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+        .sign-in-btn {
+            background-color: #3897f0;
+        }
+
+        .sign-in-btn:hover {
+            background-color: #2d8bd6;
+        }
+
+        .create-resume-btn {
+            background-color: #4caf50;
+        }
+
+        .create-resume-btn:hover {
+            background-color: #45a049;
+        }
+
+        .instagram-icon {
+            width: 50px;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 14px;
+            color:whitesmoke;
+        }
+
+        .footer a {
+            color:whitesmoke;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .btn {
+                font-size: 16px;
+                padding: 10px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png" alt="Instagram Icon" class="instagram-icon">
+        <h1>PROgram</h1>
+        <p>Your gateway to a professional resume and login via Instagram.</p>
+
+        <button class="btn sign-in-btn" onclick="window.location.href='https://instagram.com/accounts/login'">
+            Sign In / Login with Instagram
+        </button>
+
+        <button class="btn create-resume-btn" onclick="window.location.href='PROGRAM2.html'">
+            Create Your Own Resume
+        </button>
+
+        <div class="footer">
+            <p>Need help? <a href="https://instagram.com">Visit Instagram</a></p>
+        </div>
+    </div>
+</body>
+</html>

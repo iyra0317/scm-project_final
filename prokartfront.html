@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProKart</title>
+
+    
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxggIt5CPQqUxKi3eW4QhNIKv5eH5LdhRwMA&s" type="image/png">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;  
+            background: url('https://images.unsplash.com/photo-1654573817889-296cad084c97?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed; 
+            background-size: cover; 
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #2874f0;  /* Flipkart blue color */
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background: #2874f0;  
+            color: #fff;
+            font-size: 18px;
+            padding: 12px 40px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 10px 0;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background: #0060f0;
+            transform: scale(1.05);
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+        .sign-in-btn {
+            background-color: #ffcc00;  
+        }
+
+        .sign-in-btn:hover {
+            background-color: #ffb300;
+        }
+
+        .create-resume-btn {
+            background-color: #4caf50;  /* Green button for create resume */
+        }
+
+        .create-resume-btn:hover {
+            background-color: #45a049;
+        }
+
+        .flipkart-icon {
+            width: 50px;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .footer a {
+            color: #2874f0;  /* Flipkart blue */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .btn {
+                font-size: 16px;
+                padding: 10px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxggIt5CPQqUxKi3eW4QhNIKv5eH5LdhRwMA&s" alt="Flipkart Icon" class="flipkart-icon">  
+        <h1>ProKart</h1>  
+        <p>Your gateway to a professional resume and login via Flipkart.</p>
+
+        <button class="btn sign-in-btn" onclick="window.location.href='https://www.flipkart.com/'">
+            Visit Flipkart
+        </button>
+
+        <button class="btn create-resume-btn" onclick="window.location.href='prokart.html'">
+            Create Your Own Resume
+        </button>
+
+        <div class="footer">
+            <p>Need help? <a href="https://www.flipkart.com">Visit Flipkart</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f3f6;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #2874f0, #0059c8);
+    color: white;
+    padding: 20px 40px;
+    border-bottom: 4px solid #ffb400;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header .logo {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .header .user-image img {
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+  }
+  
+  .resume-container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  h1, h2 {
+    color: #2874f0;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  h2 {
+    border-left: 4px solid #ffb400;
+    padding-left: 10px;
+  }
+  
+  .personal-details p, .about p, .experience p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+  }
+  
+  .about, .experience, .skills {
+    margin-top: 25px;
+  }
+  
+  .experience .job {
+    margin-bottom: 20px;
+  }
+  
+  .experience .job h3 {
+    color: #2874f0;
+    margin-bottom: 5px;
+  }
+  
+  .experience .job ul {
+    list-style: disc;
+    padding-left: 20px;
+    color: #555;
+  }
+  
+  .skills .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+  }
+  
+  .skills .skill-tags span {
+    background: linear-gradient(90deg, #ffb400, #ff9100);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .skills .skill-tags span:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  button {
+    background-color: #2874f0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0059c8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }

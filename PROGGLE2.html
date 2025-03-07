@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proggle</title>
+  <style>
+  
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('office-meeting.jpg') no-repeat center center/cover;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+      z-index: -1;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .heading {
+      font-size: 36px;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, #007bff, #0056b3);
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 18px;
+      text-decoration: none;
+      text-align: center;
+      padding: 15px 40px;
+      margin: 10px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: linear-gradient(90deg, #0056b3, #003d80);
+      
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="heading">Let's Get Started</div>
+    <a href="https://accounts.google.com/signin" class="btn">Login/Sign-up with Google</a>
+    <a href="proggle3.html" class="btn">Create Your Own Resume</a>
+  </div>
+</body>
+</html>

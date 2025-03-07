@@ -1,0 +1,123 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #181818;
+}
+
+.resume-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #202020;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.contact-info {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.contact-info a {
+    color: #f40612;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Main Info Section */
+.main-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.name {
+    font-size: 32px;
+    color: #f40612;
+}
+
+.tagline {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.summary {
+    font-size: 16px;
+    color: #ddd;
+    margin-top: 10px;
+}
+
+/* Section Headers */
+h2 {
+    font-size: 20px;
+    color: #f40612;
+    margin-top: 30px;
+}
+
+/* Education and Skills Sections */
+.education, .skills, .experience, .projects-achievements {
+    margin-bottom: 20px;
+}
+
+.education-item, .skill-category, .job, .projects, .achievements {
+    background-color: #282828;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.skill-category h3 {
+    color: #f40612;
+}
+
+/* Work Experience */
+.job h3 {
+    color: #f40612;
+}
+
+.job p, .job ul {
+    color: #ccc;
+}
+
+.job ul {
+    padding-left: 20px;
+}
+
+/* Projects and Achievements */
+.projects h3, .achievements h3 {
+    color: #f40612;
+}
+
+.projects p, .achievements ul {
+    color: #ccc;
+}
+
+.achievements ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
