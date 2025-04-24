@@ -4,71 +4,508 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>Login | PROfile</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="newlogo2.png" class="circular-favicon">
+    <link rel="icon" type="image/png" sizes="16x16" href="newlogo2.png" class="circular-favicon">
+    <link rel="apple-touch-icon" sizes="180x180" href="newlogo2.png" class="circular-favicon">
+    <link rel="mask-icon" href="newlogo2.png" color="#5bbad5" class="circular-favicon">
+    <meta name="theme-color" content="#1a1a2e">
     <style>
+        .circular-favicon {
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
         body {
-            background-image: url("https://st.depositphotos.com/1000816/2292/i/450/depositphotos_22928632-stock-photo-business-people-handshake.jpg");
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 1rem;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url("https://st.depositphotos.com/1000816/2292/i/450/depositphotos_22928632-stock-photo-business-people-handshake.jpg") no-repeat center center;
             background-size: cover;
-            background-repeat: no-repeat;
-                    }
-        .button{
-    border-radius:6px ;
-  font-size: 3.5vh;
-  background-color:rgb(196, 224, 224);
-  cursor:pointer;
-  margin:0;
-  
-  }
-button a{
-   text-decoration:none ;
-}
-.button:hover{
-    background-color: rgb(29, 159, 139);
-    }
-.button:active{
-    background-color: rgb(14, 100, 87);
-}
-.form{
-        width:20%;
-       height:400px;
-    border-radius: 8px;
-    margin-top:70px;
-    margin-left:20px;
-    text-align: center;
-    font-size: 3vh;
-    opacity:0.8;
-}
-p a{
-    text-decoration: none;
-    font-size:2.5vh;
-    color:black
-}
-p:hover{
-     text-decoration: underline;
-}
-p:active{
-    color:rgb(157, 72, 237);
-}
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 0.5s ease-out;
+            position: relative;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo {
+            height: 120px;
+            width: 180px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 10px rgba(0, 219, 222, 0.5));
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .form-container h1 {
+            font-family: 'Righteous', cursive;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            background: linear-gradient(45deg, #00dbde, #fc00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(0, 219, 222, 0.5);
+            position: relative;
+        }
+
+        .form-container h1::after {
+            content: '|';
+            position: absolute;
+            right: 0;
+            color: #00dbde;
+            background: linear-gradient(45deg, #00dbde, #fc00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .typing-text {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #00dbde;
+            animation: typing 3.5s steps(40, end);
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            color: #fff;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #00dbde;
+            box-shadow: 0 0 10px rgba(0, 219, 222, 0.5);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .button {
+            flex: 1;
+            padding: 0.8rem;
+            background: linear-gradient(45deg, #00dbde, #fc00ff);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button.login {
+            background: linear-gradient(45deg, #fc00ff, #00dbde);
+        }
+
+        .button.submit {
+            background: linear-gradient(45deg, #00dbde, #fc00ff);
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .button:hover::before {
+            left: 100%;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 219, 222, 0.4);
+        }
+
+        .button:active {
+            transform: translateY(1px);
+        }
+
+        .link-text {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .link-text a {
+            color: #00dbde;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .link-text a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #00dbde, #fc00ff);
+            transition: width 0.3s ease;
+        }
+
+        .link-text a:hover::after {
+            width: 100%;
+        }
+
+        .link-text a:hover {
+            color: #fc00ff;
+        }
+
+        .error-message {
+            color: #ff4444;
+            font-size: 0.8rem;
+            margin-top: 0.3rem;
+            display: none;
+        }
+
+        .success-message {
+            color: #00C851;
+            font-size: 0.8rem;
+            margin-top: 0.3rem;
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 1.5rem;
+            }
+
+            .form-container h1 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .form-group input {
+                padding: 0.7rem;
+            }
+
+            .button {
+                padding: 0.7rem;
+                font-size: 0.8rem;
+            }
+        }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Righteous&display=swap" rel="stylesheet">
 </head>
 
 <body>
-   <div class="form">
-    <form action="mailto:esha63309@gmil.com" method="post" enctype="text/plain">
-        <h1>Log In </h1>
-        <b><label for="fname">First name:</label></b><br>
-        <input type="text" required><br>
-        <b><label for="lname">Last name:</label></b><br>
-        <input type="text"required><br>
-        <b><label for="text">Phone:</label></b><br>
-        <input type="integer" required><br>
-        <b><label for="text">Email:</label></b><br>
-        <input type="text" required><br>
-        <p><a href>Already have an account?</p></a>
-       <button class="button"><a href="#"><font color="black">SUBMIT</a></button></font>
-    </form>
-     
+    <div class="form-container">
+        <div class="logo-container">
+            <img src="newlogo2.png" alt="PROfile Logo" class="logo">
+        </div>
+        <h1><span class="typing-text">Welcome Back</span></h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+                <div class="error-message" id="emailError"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+                <div class="error-message" id="passwordError"></div>
+            </div>
+            <div class="button-group">
+                <button type="submit" class="button submit">LOGIN</button>
+                <a href="#" class="button login" id="registerBtn">REGISTER</a>
+            </div>
+            <div class="link-text">
+                <a href="#" id="forgotPassword">Forgot your password?</a>
+            </div>
+        </form>
+
+        <form id="registerForm" style="display: none;">
+            <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" required placeholder="Enter your first name">
+                <div class="error-message" id="fnameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" required placeholder="Enter your last name">
+                <div class="error-message" id="lnameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                <div class="error-message" id="phoneError"></div>
+            </div>
+            <div class="form-group">
+                <label for="regEmail">Email</label>
+                <input type="email" id="regEmail" name="regEmail" required placeholder="Enter your email">
+                <div class="error-message" id="regEmailError"></div>
+            </div>
+            <div class="form-group">
+                <label for="regPassword">Password</label>
+                <input type="password" id="regPassword" name="regPassword" required placeholder="Enter your password">
+                <div class="error-message" id="regPasswordError"></div>
+            </div>
+            <div class="button-group">
+                <button type="submit" class="button submit">REGISTER</button>
+                <a href="#" class="button login" id="loginBtn">LOGIN</a>
+            </div>
+        </form>
     </div>
+
+    <script>
+        // Toggle between login and register forms
+        document.getElementById('registerBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+        });
+
+        document.getElementById('loginBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'block';
+        });
+
+        // Handle registration
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const firstName = document.getElementById('fname').value;
+            const lastName = document.getElementById('lname').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+
+            // Validate form
+            let isValid = true;
+            const errors = {
+                fname: '',
+                lname: '',
+                phone: '',
+                regEmail: '',
+                regPassword: ''
+            };
+
+            if (!firstName) {
+                errors.fname = 'First name is required';
+                isValid = false;
+            }
+            if (!lastName) {
+                errors.lname = 'Last name is required';
+                isValid = false;
+            }
+            if (!phone) {
+                errors.phone = 'Phone number is required';
+                isValid = false;
+            }
+            if (!email) {
+                errors.regEmail = 'Email is required';
+                isValid = false;
+            } else if (!isValidEmail(email)) {
+                errors.regEmail = 'Please enter a valid email';
+                isValid = false;
+            }
+            if (!password) {
+                errors.regPassword = 'Password is required';
+                isValid = false;
+            } else if (password.length < 6) {
+                errors.regPassword = 'Password must be at least 6 characters';
+                isValid = false;
+            }
+
+            // Display errors
+            Object.keys(errors).forEach(key => {
+                const errorElement = document.getElementById(`${key}Error`);
+                errorElement.textContent = errors[key];
+                errorElement.style.display = errors[key] ? 'block' : 'none';
+            });
+
+            if (isValid) {
+                // Check if user already exists
+                const users = JSON.parse(localStorage.getItem('users') || '[]');
+                if (users.some(user => user.email === email)) {
+                    document.getElementById('regEmailError').textContent = 'Email already registered';
+                    document.getElementById('regEmailError').style.display = 'block';
+                    return;
+                }
+
+                // Save user data
+                const userData = {
+                    firstName,
+                    lastName,
+                    phone,
+                    email,
+                    password // Note: In a real app, you should hash the password
+                };
+
+                users.push(userData);
+                localStorage.setItem('users', JSON.stringify(users));
+
+                // Show success message and switch to login form
+                alert('Registration successful! Please login.');
+                document.getElementById('registerForm').style.display = 'none';
+                document.getElementById('loginForm').style.display = 'block';
+                document.getElementById('email').value = email;
+            }
+        });
+
+        // Handle login
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Validate form
+            let isValid = true;
+            const errors = {
+                email: '',
+                password: ''
+            };
+
+            if (!email) {
+                errors.email = 'Email is required';
+                isValid = false;
+            } else if (!isValidEmail(email)) {
+                errors.email = 'Please enter a valid email';
+                isValid = false;
+            }
+            if (!password) {
+                errors.password = 'Password is required';
+                isValid = false;
+            }
+
+            // Display errors
+            Object.keys(errors).forEach(key => {
+                const errorElement = document.getElementById(`${key}Error`);
+                errorElement.textContent = errors[key];
+                errorElement.style.display = errors[key] ? 'block' : 'none';
+            });
+
+            if (isValid) {
+                // Check credentials
+                const users = JSON.parse(localStorage.getItem('users') || '[]');
+                const user = users.find(u => u.email === email && u.password === password);
+
+                if (user) {
+                    // Store current user in session
+                    localStorage.setItem('currentUser', JSON.stringify({
+                        firstName: user.firstName,
+                        lastName: user.lastName,
+                        email: user.email
+                    }));
+
+                    // Redirect to template page
+                    window.location.href = 'template.html';
+                } else {
+                    document.getElementById('passwordError').textContent = 'Invalid email or password';
+                    document.getElementById('passwordError').style.display = 'block';
+                }
+            }
+        });
+
+        // Email validation helper
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+    </script>
 </body>
 
 </html>
