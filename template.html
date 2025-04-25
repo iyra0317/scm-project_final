@@ -1,61 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>templates</title>
-    <link rel="stylesheet" href="template.css">
-    <style>
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Templates with Resume Option</title>
+  <link rel="stylesheet" href="template.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 0;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      background: linear-gradient(45deg, #00dbde, #fc00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .template-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .template-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      transform: translateX(-100%);
+      transition: 0.5s;
+    }
+    .template-card:hover::before {
+      transform: translateX(100%);
+    }
+    .template-card a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    .template-card img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+    .template-card:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Unique color accents */
+    .proflix { border-top: 4px solid #e50914; }
+    .prozon { border-top: 4px solid #ff9900; }
+    .prokart { border-top: 4px solid #2874f0; }
+    .proggle { border-top: 4px solid #4285F4; }
+    .prochat { border-top: 4px solid #fffc00; }
+    .program { border-top: 4px solid #fd5949; }
+    .resume { border-top: 4px solid #4CAF50; }
+
+    /* Hover effects */
+    .proflix:hover { background: rgba(229, 9, 20, 0.2); transform: translateY(-5px); }
+    .prozon:hover { background: rgba(255, 153, 0, 0.2); transform: translateY(-5px); }
+    .prokart:hover { background: rgba(40, 116, 240, 0.2); transform: translateY(-5px); }
+    .proggle:hover { background: rgba(66, 133, 244, 0.2); transform: translateY(-5px); }
+    .prochat:hover { background: rgba(255, 252, 0, 0.2); transform: translateY(-5px); }
+    .program:hover { background: rgba(253, 89, 73, 0.2); transform: translateY(-5px); }
+    .resume:hover { background: rgba(76, 175, 80, 0.2); transform: translateY(-5px); }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+      header {
+        padding: 2rem 0;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .search-container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .search-box {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 30px;
+      color: #fff;
+      font-size: 1rem;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-box:focus {
+      outline: none;
+      border-color: #00dbde;
+      box-shadow: 0 0 15px rgba(0, 219, 222, 0.3);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .search-box::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .template-card.hidden {
+      display: none;
+    }
+
+    .no-results {
+      text-align: center;
+      grid-column: 1 / -1;
+      padding: 2rem;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.2rem;
+      display: none;
+    }
+
+    .no-results.show {
+      display: block;
+    }
+  </style>
 </head>
-
 <body>
-    <div class="udiv">
-        Choose your template
-    </div><br>
-    <div class="container">
-        <div id="proflix"><a href="ntflix.htm">
-                <font color="red">
-                    PROFLIX <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Netflix_icon.svg/2048px-Netflix_icon.svg.png"
-                        width=33px>
-            </a></font>
-        </div>
-        <div id="prozon"><a href="prozonfront.html">
-                <font color="white">
-                    PROZON <img src="https://freelogopng.com/images/all_img/1688364563amazon-app-logo-png.png"
-                        width=32px>
-            </a></font>
-        </div>
-        <div id="prokart"><a href="prokartfront.html">
-                <font color="dodgerblue">
-                    PROKART <img
-                        src="https://e7.pngegg.com/pngimages/946/191/png-clipart-flipkart-e-commerce-logo-bangalore-chief-executive-others-miscellaneous-blue-thumbnail.png"
-                        width=32px>
-            </a></div>
-        </font>
-    </div>
-    <div class="container2">
-        <div id="proggle"><a href="PROGGLE1.HTML">
-                <font color="black">
-                    PROGGLE  <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-google-icon-logo-png-transparent-svg-vector-bie-supply-14.png" width=32px>
-                </font>
-            </a>
-        </div>
-        <div id="prochat"><a href="prochatfront.html">
-                <font color="white">
-                    PROCHAT  <img src="https://cdn2.iconfinder.com/data/icons/2018-social-media-app-logos/1000/2018_social_media_popular_app_logo_snapchat-512.png" width=32px>
-                </font>
-            </a>
-        </div>
-        <div id="program"><a href="PROGRAM1.HTML">
-                <font color="orange">
-                    PROGRAM  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" width=32px>
-                </font>
-            </a>
-        </div>
-    </div>
-</body>
+  <header>
+    <h1>Choose Your Template</h1>
+  </header>
+  
+  <div class="search-container">
+    <input type="text" class="search-box" placeholder="Search templates..." id="searchInput">
+  </div>
 
+  <main class="container">
+    <div class="no-results">No templates found matching your search.</div>
+    <section class="template-card resume" data-name="Make Own Resume" onclick="setActive(this, 'resume')">
+      <a href="ownresume.html">
+        Make Own Resume
+        <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Resume Icon" width="32">
+      </a>
+    </section>
+    <section class="template-card proflix" data-name="Netflix Themed" onclick="setActive(this, 'proflix')">
+      <a href="netflix3.html">
+        Netflix Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Netflix_icon.svg/2048px-Netflix_icon.svg.png" alt="Netflix Logo" width="33">
+      </a>
+    </section>
+    <section class="template-card prozon" data-name="Amazon Themed" onclick="setActive(this, 'prozon')">
+      <a href="prozonfront.html">
+        Amazon Themed
+        <img src="https://freelogopng.com/images/all_img/1688364563amazon-app-logo-png.png" alt="Amazon Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card prokart" data-name="Flipkart Themed" onclick="setActive(this, 'prokart')">
+      <a href="prokartfront.html">
+        Flipkart Themed
+        <img src="https://e7.pngegg.com/pngimages/946/191/png-clipart-flipkart-e-commerce-logo-bangalore-chief-executive-others-miscellaneous-blue-thumbnail.png" alt="Flipkart Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card proggle" data-name="Google Themed" onclick="setActive(this, 'proggle')">
+      <a href="PROGGLE1.HTML">
+        Google Themed
+        <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-google-icon-logo-png-transparent-svg-vector-bie-supply-14.png" alt="Google Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card prochat" data-name="Snapchat Themed" onclick="setActive(this, 'prochat')">
+      <a href="prochatfront.html">
+        Snapchat Themed
+        <img src="https://cdn2.iconfinder.com/data/icons/2018-social-media-app-logos/1000/2018_social_media_popular_app_logo_snapchat-512.png" alt="Snapchat Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card program" data-name="Instagram Themed" onclick="setActive(this, 'program')">
+      <a href="instagram.html">
+        Instagram Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="Instagram Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card linkedin" data-name="LinkedIn Themed" onclick="setActive(this, 'linkedin')">
+      <a href="#">
+        LinkedIn Themed
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card spotify" data-name="Spotify Themed" onclick="setActive(this, 'spotify')">
+      <a href="#">
+        Spotify Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png" alt="Spotify Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card microsoft" data-name="Microsoft Themed" onclick="setActive(this, 'microsoft')">
+      <a href="#">
+        Microsoft Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2560px-Microsoft_logo_%282012%29.svg.png" alt="Microsoft Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card accenture" data-name="Accenture Themed" onclick="setActive(this, 'accenture')">
+      <a href="#">
+        Accenture Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/2560px-Accenture.svg.png" alt="Accenture Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card apple" data-name="Apple Themed" onclick="setActive(this, 'apple')">
+      <a href="#">
+        Apple Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png" alt="Apple Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card meta" data-name="Meta Themed" onclick="setActive(this, 'meta')">
+      <a href="#">
+        Meta Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Meta_Platforms_Inc._logo.svg/2560px-Meta_Platforms_Inc._logo.svg.png" alt="Meta Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card twitter" data-name="Twitter Themed" onclick="setActive(this, 'twitter')">
+      <a href="#">
+        Twitter Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/2491px-Logo_of_Twitter.svg.png" alt="Twitter Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card uber" data-name="Uber Themed" onclick="setActive(this, 'uber')">
+      <a href="#">
+        Uber Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Uber_logo_2018.svg/2560px-Uber_logo_2018.svg.png" alt="Uber Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card airbnb" data-name="Airbnb Themed" onclick="setActive(this, 'airbnb')">
+      <a href="#">
+        Airbnb Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/2560px-Airbnb_Logo_B%C3%A9lo.svg.png" alt="Airbnb Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card tiktok" data-name="TikTok Themed" onclick="setActive(this, 'tiktok')">
+      <a href="#">
+        TikTok Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/TikTok_logo.svg/2560px-TikTok_logo.svg.png" alt="TikTok Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card discord" data-name="Discord Themed" onclick="setActive(this, 'discord')">
+      <a href="#">
+        Discord Themed
+        <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_black_RGB.png" alt="Discord Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card slack" data-name="Slack Themed" onclick="setActive(this, 'slack')">
+      <a href="#">
+        Slack Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Slack_icon_2019.svg/2048px-Slack_icon_2019.svg.png" alt="Slack Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card zoom" data-name="Zoom Themed" onclick="setActive(this, 'zoom')">
+      <a href="#">
+        Zoom Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/2560px-Zoom_Communications_Logo.svg.png" alt="Zoom Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card whatsapp" data-name="WhatsApp Themed" onclick="setActive(this, 'whatsapp')">
+      <a href="whatsapp.html">
+        WhatsApp Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2048px-WhatsApp.svg.png" alt="WhatsApp Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card youtube" data-name="YouTube Themed" onclick="setActive(this, 'youtube')">
+      <a href="#">
+        YouTube Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card pinterest" data-name="Pinterest Themed" onclick="setActive(this, 'pinterest')">
+      <a href="#">
+        Pinterest Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Pinterest-logo.png/1200px-Pinterest-logo.png" alt="Pinterest Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card reddit" data-name="Reddit Themed" onclick="setActive(this, 'reddit')">
+      <a href="#">
+        Reddit Themed
+        <img src="https://www.redditstatic.com/desktop2x/img/favicon/android-icon-192x192.png" alt="Reddit Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card twitch" data-name="Twitch Themed" onclick="setActive(this, 'twitch')">
+      <a href="#">
+        Twitch Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Twitch_logo.svg/2560px-Twitch_logo.svg.png" alt="Twitch Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card paypal" data-name="PayPal Themed" onclick="setActive(this, 'paypal')">
+      <a href="#">
+        PayPal Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/2560px-PayPal.svg.png" alt="PayPal Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card adobe" data-name="Adobe Themed" onclick="setActive(this, 'adobe')">
+      <a href="#">
+        Adobe Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Adobe_Corporate_Logo.png/2560px-Adobe_Corporate_Logo.png" alt="Adobe Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card oracle" data-name="Oracle Themed" onclick="setActive(this, 'oracle')">
+      <a href="#">
+        Oracle Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oracle_logo.svg/2560px-Oracle_logo.svg.png" alt="Oracle Logo" width="32">
+      </a>
+    </section>
+    <section class="template-card salesforce" data-name="Salesforce Themed" onclick="setActive(this, 'salesforce')">
+      <a href="#">
+        Salesforce Themed
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/2560px-Salesforce.com_logo.svg.png" alt="Salesforce Logo" width="32">
+      </a>
+    </section>
+  </main>
+
+  <script>
+    function setActive(element, type) {
+      // Remove all active classes
+      document.querySelectorAll('.template-card').forEach(el => {
+        el.classList.remove(
+          'active-proflix',
+          'active-prozon',
+          'active-prokart',
+          'active-proggle',
+          'active-prochat',
+          'active-program',
+          'active-resume',
+          'active-linkedin',
+          'active-spotify',
+          'active-microsoft',
+          'active-accenture',
+          'active-apple',
+          'active-meta',
+          'active-twitter',
+          'active-uber',
+          'active-airbnb',
+          'active-tiktok',
+          'active-discord',
+          'active-slack',
+          'active-zoom',
+          'active-whatsapp',
+          'active-youtube',
+          'active-pinterest',
+          'active-reddit',
+          'active-twitch',
+          'active-paypal',
+          'active-adobe',
+          'active-oracle',
+          'active-salesforce'
+        );
+      });
+      // Add active class to clicked card
+      element.classList.add('active-' + type);
+    }
+
+    // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    const templateCards = document.querySelectorAll('.template-card');
+    const noResults = document.querySelector('.no-results');
+
+    searchInput.addEventListener('input', function(e) {
+      const searchTerm = e.target.value.toLowerCase();
+      let visibleCount = 0;
+
+      templateCards.forEach(card => {
+        const cardName = card.getAttribute('data-name').toLowerCase();
+        if (cardName.includes(searchTerm)) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Show/hide no results message
+      if (visibleCount === 0) {
+        noResults.classList.add('show');
+      } else {
+        noResults.classList.remove('show');
+      }
+    });
+
+    // Add focus effect to search box
+    searchInput.addEventListener('focus', function() {
+      this.parentElement.style.transform = 'scale(1.02)';
+    });
+
+    searchInput.addEventListener('blur', function() {
+      this.parentElement.style.transform = 'scale(1)';
+    });
+  </script>
+</body>
 </html>
