@@ -1,0 +1,314 @@
+/* Netflix Style Resume Builder CSS */
+:root {
+    --netflix-red: #e50914;
+    --netflix-black: #141414;
+    --netflix-gray: #808080;
+    --netflix-white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Netflix Sans', Arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--netflix-black);
+    color: var(--netflix-white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.netflix-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.netflix-header {
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 2px solid var(--netflix-red);
+    flex-shrink: 0;
+}
+
+.logo img {
+    height: 40px;
+    margin-bottom: 1rem;
+}
+
+.netflix-header h1 {
+    color: var(--netflix-red);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Main Content Layout */
+.netflix-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex: 1;
+    min-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+/* Form Styles */
+.input-section {
+    background: rgba(20, 20, 20, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--netflix-red);
+    height: 100%;
+    overflow-y: auto;
+}
+
+.form-container h2 {
+    color: var(--netflix-red);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--netflix-white);
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--netflix-gray);
+    border-radius: 5px;
+    color: var(--netflix-white);
+    font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--netflix-red);
+    box-shadow: 0 0 5px var(--netflix-red);
+}
+
+/* Experience and Education Items */
+.experience-item,
+.education-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--netflix-gray);
+}
+
+/* Buttons */
+button {
+    background-color: var(--netflix-red);
+    color: var(--netflix-white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff0a16;
+    transform: translateY(-2px);
+}
+
+.add-experience,
+.add-education {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.remove-experience,
+.remove-education {
+    background-color: #ff4444;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Preview Section */
+.preview-section {
+    background: rgba(20, 20, 20, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--netflix-red);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-section h2 {
+    color: var(--netflix-red);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.preview-container {
+    background: var(--netflix-black);
+    padding: 2rem;
+    border-radius: 5px;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+/* Resume Preview Styles */
+.netflix-resume {
+    color: var(--netflix-white);
+    height: 100%;
+}
+
+.netflix-resume h1,
+.netflix-resume h2,
+.netflix-resume h3 {
+    color: var(--netflix-red);
+}
+
+.netflix-resume .header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.netflix-resume .contact-info {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.netflix-resume .contact-info a {
+    color: var(--netflix-white);
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.netflix-resume .contact-info a:hover {
+    color: var(--netflix-red);
+}
+
+.netflix-resume .tagline {
+    color: var(--netflix-gray);
+    font-style: italic;
+    margin: 0.5rem 0;
+}
+
+.netflix-resume section {
+    margin-bottom: 2rem;
+}
+
+.netflix-resume .job,
+.netflix-resume .education-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--netflix-gray);
+}
+
+.netflix-resume ul {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+.netflix-resume ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.netflix-resume ul li::before {
+    content: "•";
+    color: var(--netflix-red);
+    position: absolute;
+    left: 0;
+}
+
+/* Preview Actions */
+.preview-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-shrink: 0;
+}
+
+.download-btn,
+.share-btn {
+    flex: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .netflix-main {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    
+    .netflix-header h1 {
+        font-size: 2rem;
+    }
+
+    .input-section,
+    .preview-section {
+        height: auto;
+        min-height: 50vh;
+    }
+}
+
+/* PDF Specific Styles */
+@media print {
+    body {
+        background: white;
+    }
+    
+    .netflix-resume {
+        color: black;
+    }
+    
+    .netflix-resume h1,
+    .netflix-resume h2,
+    .netflix-resume h3 {
+        color: var(--netflix-red);
+    }
+    
+    .netflix-resume .contact-info a {
+        color: black;
+        text-decoration: underline;
+    }
+    
+    .netflix-resume .tagline {
+        color: #666;
+    }
+    
+    .netflix-resume .job,
+    .netflix-resume .education-item {
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .netflix-resume ul li::before {
+        color: var(--netflix-red);
+    }
+}

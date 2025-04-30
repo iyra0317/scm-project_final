@@ -1,0 +1,434 @@
+
+.template-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.template-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+.template-card:hover::before {
+  transform: translateX(100%);
+}
+
+.template-card a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.template-card img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.template-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Netflix Theme */
+.template-card.proflix {
+  border-top: 4px solid #e50914;
+}
+
+.template-card.proflix:hover {
+  background: rgba(229, 9, 20, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(229, 9, 20, 0.3);
+}
+
+/* Amazon Theme */
+.template-card.prozon {
+  border-top: 4px solid #ff9900;
+}
+
+.template-card.prozon:hover {
+  background: rgba(255, 153, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(255, 153, 0, 0.3);
+}
+
+/* Flipkart Theme */
+.template-card.prokart {
+  border-top: 4px solid #2874f0;
+}
+
+.template-card.prokart:hover {
+  background: rgba(40, 116, 240, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(40, 116, 240, 0.3);
+}
+
+/* Google Theme */
+.template-card.proggle {
+  border-top: 4px solid #4285F4;
+}
+
+.template-card.proggle:hover {
+  background: rgba(66, 133, 244, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(66, 133, 244, 0.3);
+}
+
+/* Snapchat Theme */
+.template-card.prochat {
+  border-top: 4px solid #fffc00;
+}
+
+.template-card.prochat:hover {
+  background: rgba(255, 252, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(255, 252, 0, 0.3);
+}
+
+/* Instagram Theme */
+.template-card.program {
+  border-top: 4px solid #fd5949;
+}
+
+.template-card.program:hover {
+  background: rgba(253, 89, 73, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(253, 89, 73, 0.3);
+}
+
+/* LinkedIn Theme */
+.template-card.linkedin {
+  border-top: 4px solid #0077b5;
+}
+
+.template-card.linkedin:hover {
+  background: rgba(0, 119, 181, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 119, 181, 0.3);
+}
+
+/* Spotify Theme */
+.template-card.spotify {
+  border-top: 4px solid #1DB954;
+}
+
+.template-card.spotify:hover {
+  background: rgba(29, 185, 84, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(29, 185, 84, 0.3);
+}
+
+/* Microsoft Theme */
+.template-card.microsoft {
+  border-top: 4px solid #00A4EF;
+}
+
+.template-card.microsoft:hover {
+  background: rgba(0, 164, 239, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 164, 239, 0.3);
+}
+
+/* Accenture Theme */
+.template-card.accenture {
+  border-top: 4px solid #A100FF;
+}
+
+.template-card.accenture:hover {
+  background: rgba(161, 0, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(161, 0, 255, 0.3);
+}
+
+/* Apple Theme */
+.template-card.apple {
+  border-top: 4px solid #000000;
+}
+
+.template-card.apple:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Meta Theme */
+.template-card.meta {
+  border-top: 4px solid #1877F2;
+}
+
+.template-card.meta:hover {
+  background: rgba(24, 119, 242, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(24, 119, 242, 0.3);
+}
+
+/* Twitter Theme */
+.template-card.twitter {
+  border-top: 4px solid #1DA1F2;
+}
+
+.template-card.twitter:hover {
+  background: rgba(29, 161, 242, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(29, 161, 242, 0.3);
+}
+
+/* Uber Theme */
+.template-card.uber {
+  border-top: 4px solid #000000;
+}
+
+.template-card.uber:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Airbnb Theme */
+.template-card.airbnb {
+  border-top: 4px solid #FF5A5F;
+}
+
+.template-card.airbnb:hover {
+  background: rgba(255, 90, 95, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(255, 90, 95, 0.3);
+}
+
+/* TikTok Theme */
+.template-card.tiktok {
+  border-top: 4px solid #000000;
+}
+
+.template-card.tiktok:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Discord Theme */
+.template-card.discord {
+  border-top: 4px solid #7289DA;
+}
+
+.template-card.discord:hover {
+  background: rgba(114, 137, 218, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(114, 137, 218, 0.3);
+}
+
+/* Slack Theme */
+.template-card.slack {
+  border-top: 4px solid #4A154B;
+}
+
+.template-card.slack:hover {
+  background: rgba(74, 21, 75, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(74, 21, 75, 0.3);
+}
+
+/* Zoom Theme */
+.template-card.zoom {
+  border-top: 4px solid #2D8CFF;
+}
+
+.template-card.zoom:hover {
+  background: rgba(45, 140, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(45, 140, 255, 0.3);
+}
+
+/* Resume Theme */
+.template-card.resume {
+  border-top: 4px solid #4CAF50;
+}
+
+.template-card.resume:hover {
+  background: rgba(76, 175, 80, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(76, 175, 80, 0.3);
+}
+
+/* WhatsApp Theme */
+.template-card.whatsapp {
+  border-top: 4px solid #25D366;
+}
+
+.template-card.whatsapp:hover {
+  background: rgba(37, 211, 102, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(37, 211, 102, 0.3);
+}
+
+/* YouTube Theme */
+.template-card.youtube {
+  border-top: 4px solid #FF0000;
+}
+
+.template-card.youtube:hover {
+  background: rgba(255, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(255, 0, 0, 0.3);
+}
+
+/* Pinterest Theme */
+.template-card.pinterest {
+  border-top: 4px solid #E60023;
+}
+
+.template-card.pinterest:hover {
+  background: rgba(230, 0, 35, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(230, 0, 35, 0.3);
+}
+
+/* Reddit Theme */
+.template-card.reddit {
+  border-top: 4px solid #FF4500;
+}
+
+.template-card.reddit:hover {
+  background: rgba(255, 69, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(255, 69, 0, 0.3);
+}
+
+/* Twitch Theme */
+.template-card.twitch {
+  border-top: 4px solid #9146FF;
+}
+
+.template-card.twitch:hover {
+  background: rgba(145, 70, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(145, 70, 255, 0.3);
+}
+
+/* PayPal Theme */
+.template-card.paypal {
+  border-top: 4px solid #003087;
+}
+
+.template-card.paypal:hover {
+  background: rgba(0, 48, 135, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 48, 135, 0.3);
+}
+
+/* Adobe Theme */
+.template-card.adobe {
+  border-top: 4px solid #FF0000;
+}
+
+.template-card.adobe:hover {
+  background: rgba(255, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(255, 0, 0, 0.3);
+}
+
+/* Oracle Theme */
+.template-card.oracle {
+  border-top: 4px solid #F80000;
+}
+
+.template-card.oracle:hover {
+  background: rgba(248, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(248, 0, 0, 0.3);
+}
+
+/* Salesforce Theme */
+.template-card.salesforce {
+  border-top: 4px solid #00A1E0;
+}
+
+.template-card.salesforce:hover {
+  background: rgba(0, 161, 224, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 161, 224, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .template-card {
+    padding: 1.5rem;
+  }
+  
+  .template-card img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Animation for active state */
+.template-card.active-proflix,
+.template-card.active-prozon,
+.template-card.active-prokart,
+.template-card.active-proggle,
+.template-card.active-prochat,
+.template-card.active-program,
+.template-card.active-linkedin,
+.template-card.active-spotify,
+.template-card.active-microsoft,
+.template-card.active-accenture,
+.template-card.active-apple,
+.template-card.active-meta,
+.template-card.active-twitter,
+.template-card.active-uber,
+.template-card.active-airbnb,
+.template-card.active-tiktok,
+.template-card.active-discord,
+.template-card.active-slack,
+.template-card.active-zoom,
+.template-card.active-resume,
+.template-card.active-whatsapp,
+.template-card.active-youtube,
+.template-card.active-pinterest,
+.template-card.active-reddit,
+.template-card.active-twitch,
+.template-card.active-paypal,
+.template-card.active-adobe,
+.template-card.active-oracle,
+.template-card.active-salesforce {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

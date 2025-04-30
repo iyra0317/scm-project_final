@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Style Resume Builder</title>
+    <link rel="stylesheet" href="netflix3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="netflix-container">
+        <!-- Header Section -->
+        <header class="netflix-header">
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo">
+            </div>
+            <h1>Create Your Netflix-Style Resume</h1>
+      </header>
+      
+        <!-- Main Content -->
+        <main class="netflix-main">
+            <!-- Input Form Section -->
+            <section class="input-section">
+                <div class="form-container">
+                    <h2>Your Information</h2>
+                    <form id="resumeForm">
+                        <!-- Personal Information -->
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" name="location" placeholder="e.g., Dallas, Texas" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="linkedin">LinkedIn URL</label>
+                            <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                        </div>
+                        <div class="form-group">
+                            <label for="github">GitHub URL</label>
+                            <input type="url" id="github" name="github" placeholder="https://github.com/yourprofile">
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Website URL</label>
+                            <input type="url" id="website" name="website" placeholder="https://yourwebsite.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="summary">Professional Summary</label>
+                            <textarea id="summary" name="summary" placeholder="Write a brief summary about yourself..." required></textarea>
+                        </div>
+
+                        <!-- Education Section -->
+                        <div class="form-group">
+                            <label>Education</label>
+                            <div id="educationContainer">
+                                <div class="education-item">
+                                    <input type="text" name="degree[]" placeholder="Degree" class="degree" required>
+                                    <input type="text" name="institution[]" placeholder="Institution" class="institution" required>
+                                    <input type="text" name="location[]" placeholder="Location" class="location" required>
+                                    <input type="text" name="year[]" placeholder="Year" class="year" required>
+                                </div>
+                            </div>
+                            <button type="button" class="add-education">Add Education</button>
+                        </div>
+
+                        <!-- Skills Section -->
+                        <div class="form-group">
+                            <label for="functionalSkills">Functional Skills</label>
+                            <input type="text" id="functionalSkills" name="functionalSkills" placeholder="JIRA, Confluence, Agile/Hybrid Methodology" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="technicalSkills">Technical Skills</label>
+                            <input type="text" id="technicalSkills" name="technicalSkills" placeholder="SQL, MySQL, Python, Java" required>
+                        </div>
+
+                        <!-- Experience Section -->
+                        <div class="form-group">
+                            <label>Work Experience</label>
+                            <div id="experienceContainer">
+                                <div class="experience-item">
+                                    <input type="text" name="company[]" placeholder="Company Name" class="company" required>
+                                    <input type="text" name="position[]" placeholder="Position" class="position" required>
+                                    <input type="text" name="location[]" placeholder="Location" class="location" required>
+                                    <input type="text" name="duration[]" placeholder="Duration (e.g., Aug 2019 - Apr 2020)" class="duration" required>
+                                    <textarea name="description[]" placeholder="Job Description (one point per line)" class="description" required></textarea>
+                                </div>
+                            </div>
+                            <button type="button" class="add-experience">Add Experience</button>
+                        </div>
+
+                        <!-- Projects Section -->
+                        <div class="form-group">
+                            <label for="projects">Academic Projects</label>
+                            <textarea id="projects" name="projects" placeholder="Describe your academic projects..."></textarea>
+                </div>
+
+                        <!-- Achievements Section -->
+                        <div class="form-group">
+                            <label for="achievements">Achievements</label>
+                            <textarea id="achievements" name="achievements" placeholder="List your achievements (one per line)"></textarea>
+              </div>
+
+                        <button type="submit" class="generate-btn">Generate Resume</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Preview Section -->
+            <section class="preview-section">
+                <h2>Preview</h2>
+                <div class="preview-container">
+                    <div class="netflix-resume" id="resumePreview">
+                        <!-- Preview content will be dynamically inserted here -->
+              </div>
+                </div>
+                <div class="preview-actions">
+                    <button class="download-btn" id="downloadBtn">Download PDF</button>
+                    <button class="share-btn" id="shareBtn">Share</button>
+                </div>
+            </section>
+        </main>
+              </div>
+              
+    <!-- Add html2pdf.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="netflix3.js"></script>
+      </body>
+      </html>
