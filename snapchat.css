@@ -1,0 +1,421 @@
+/* Snapchat Style Resume Builder CSS */
+:root {
+    --snapchat-yellow: #FFFC00;
+    --snapchat-black: #000000;
+    --snapchat-white: #FFFFFF;
+    --snapchat-gray: #F5F5F5;
+    --snapchat-text: #333333;
+    --snapchat-border: #E0E0E0;
+    --snapchat-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--snapchat-gray);
+    color: var(--snapchat-text);
+}
+
+.snapchat-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.snapchat-header {
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.snapchat-header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.snapchat-header .logo img {
+    width: 48px;
+    height: 48px;
+}
+
+.snapchat-header h1 {
+    font-size: 2rem;
+    color: var(--snapchat-black);
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Filter Section */
+.filter-section {
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+}
+
+.filter-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.filter-option {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--snapchat-yellow);
+    padding: 3px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3));
+    z-index: 1;
+}
+
+.filter-option:hover {
+    transform: scale(1.1);
+}
+
+.filter-content {
+    width: 100%;
+    height: 100%;
+    background: var(--snapchat-white);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.filter-content span {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.filter-content p {
+    font-size: 0.8rem;
+    color: var(--snapchat-text);
+    text-align: center;
+}
+
+/* Form Section */
+.snapchat-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background: var(--snapchat-white);
+    border-radius: 10px;
+    box-shadow: var(--snapchat-shadow);
+    padding: 2rem;
+}
+
+.form-section {
+    border-right: 1px solid var(--snapchat-border);
+    padding-right: 2rem;
+}
+
+.form-group {
+    display: none;
+    margin-bottom: 2rem;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.form-group.active {
+    display: block;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+    font-size: 1.5rem;
+    color: var(--snapchat-text);
+}
+
+.add-education,
+.add-experience {
+    background: var(--snapchat-yellow);
+    color: var(--snapchat-black);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.add-education:hover,
+.add-experience:hover {
+    opacity: 0.9;
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    border: 1px solid var(--snapchat-border);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--snapchat-yellow);
+}
+
+.description-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.description-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.generate-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--snapchat-yellow);
+    color: var(--snapchat-black);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.generate-btn:hover {
+    opacity: 0.9;
+}
+
+/* Preview Section */
+.preview-section {
+    padding-left: 2rem;
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.preview-header h2 {
+    font-size: 1.5rem;
+    color: var(--snapchat-text);
+}
+
+.preview-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.download-btn,
+.share-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.download-btn {
+    background: var(--snapchat-yellow);
+    color: var(--snapchat-black);
+}
+
+.share-btn {
+    background: var(--snapchat-black);
+    color: var(--snapchat-white);
+}
+
+.download-btn:hover,
+.share-btn:hover {
+    opacity: 0.9;
+}
+
+.preview-container {
+    background: var(--snapchat-white);
+    border: 1px solid var(--snapchat-border);
+    border-radius: 5px;
+    padding: 2rem;
+    min-height: 500px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .snapchat-main {
+        grid-template-columns: 1fr;
+    }
+
+    .form-section {
+        border-right: none;
+        border-bottom: 1px solid var(--snapchat-border);
+        padding-right: 0;
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .preview-section {
+        padding-left: 0;
+    }
+
+    .filter-container {
+        justify-content: flex-start;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group.active {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* === Resume Preview Styles === */
+.resume-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.resume-header {
+    border-bottom: 3px solid #ffe600;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+}
+
+.resume-account {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.resume-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    border: 3px solid #ffe600;
+}
+
+.resume-name {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.resume-title {
+    font-size: 1.2rem;
+    color: #888;
+}
+
+.resume-contact {
+    margin: 8px 0;
+    color: #444;
+}
+
+.resume-links a {
+    color: #0099ff;
+    text-decoration: none;
+    margin-right: 8px;
+}
+
+.resume-bio {
+    margin-top: 16px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.resume-section {
+    margin-bottom: 24px;
+}
+
+.resume-section h3 {
+    color: #ffe600;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.skill-badge {
+    display: inline-block;
+    background: #f3f3f3;
+    color: #333;
+    border-radius: 8px;
+    padding: 4px 12px;
+    margin: 2px 4px 2px 0;
+    font-size: 0.95rem;
+}
+
+.resume-section ul {
+    padding-left: 20px;
+}
+
+.resume-section li {
+    margin-bottom: 6px;
+}
