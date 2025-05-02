@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Style Resume Builder</title>
+    <link rel="stylesheet" href="whatsapp.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="whatsapp-container">
+        <header class="whatsapp-header">
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
+                <span class="status">Online</span>
+            </div>
+            <h1>📱 WhatsApp Resume Builder</h1>
+            <p class="subtitle">Create your professional resume in a chat-like interface</p>
+        </header>
+
+        <main class="whatsapp-main">
+            <section class="chat-interface">
+                <div class="chat-container">
+                    <div class="chat-messages">
+                        <div class="message bot">
+                            <div class="message-content">
+                                <p>👋 Hi! I'm your WhatsApp Resume Assistant. Let's create your professional resume together!</p>
+                            </div>
+                        </div>
+                        <div class="message bot">
+                            <div class="message-content">
+                                <p>📝 Please fill in your details below to get started.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form id="resumeForm" class="chat-form">
+                        <div class="form-group">
+                            <label>👤 Personal Information</label>
+                            <div class="input-group">
+                                <span class="input-icon">👤</span>
+                                <input type="text" name="name" placeholder="Your full name" required>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-icon">📍</span>
+                                <input type="text" name="location" placeholder="Your location" required>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-icon">📧</span>
+                                <input type="email" name="email" placeholder="Your email" required>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-icon">📱</span>
+                                <input type="tel" name="phone" placeholder="Your phone number" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>🔗 Social Links</label>
+                            <div class="input-group">
+                                <span class="input-icon"><i class="fab fa-linkedin"></i></span>
+                                <input type="url" name="linkedin" placeholder="LinkedIn profile URL">
+                            </div>
+                            <div class="input-group">
+                                <span class="input-icon"><i class="fab fa-github"></i></span>
+                                <input type="url" name="github" placeholder="GitHub profile URL">
+                            </div>
+                            <div class="input-group">
+                                <span class="input-icon">🌐</span>
+                                <input type="url" name="website" placeholder="Personal website URL">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>📝 Professional Summary</label>
+                            <div class="input-group">
+                                <span class="input-icon">✍</span>
+                                <textarea name="summary" placeholder="Tell us about yourself..." required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>🎓 Education</label>
+                            <div id="educationContainer">
+                                <div class="education-item">
+                                    <div class="input-group">
+                                        <span class="input-icon">🎓</span>
+                                        <input type="text" name="degree[]" placeholder="Degree" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-icon">🏫</span>
+                                        <input type="text" name="institution[]" placeholder="Institution" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-icon">📍</span>
+                                        <input type="text" name="location[]" placeholder="Location" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-icon">📅</span>
+                                        <input type="text" name="year[]" placeholder="Year" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="add-education">➕ Add Education</button>
+                        </div>
+
+                        <div class="form-group">
+                            <label>💼 Work Experience</label>
+                            <div id="experienceContainer">
+                                <div class="experience-item">
+                                    <div class="input-group">
+                                        <span class="input-icon">🏢</span>
+                                        <input type="text" name="company[]" placeholder="Company Name" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-icon">👔</span>
+                                        <input type="text" name="position[]" placeholder="Position" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-icon">📍</span>
+                                        <input type="text" name="location[]" placeholder="Location" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-icon">📅</span>
+                                        <input type="text" name="duration[]" placeholder="Duration" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-icon">📋</span>
+                                        <textarea name="description[]" placeholder="Job Description (one point per line)" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="add-experience">➕ Add Experience</button>
+                        </div>
+
+                        <div class="form-group">
+                            <label>🛠 Skills</label>
+                            <div class="input-group">
+                                <span class="input-icon">💡</span>
+                                <input type="text" name="functionalSkills" placeholder="Functional Skills (e.g., Project Management, Leadership)" required>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-icon">⚙</span>
+                                <input type="text" name="technicalSkills" placeholder="Technical Skills (e.g., Python, JavaScript, SQL)" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>📚 Projects & Achievements</label>
+                            <div class="input-group">
+                                <span class="input-icon">📚</span>
+                                <textarea name="projects" placeholder="Describe your academic projects..."></textarea>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-icon">🏆</span>
+                                <textarea name="achievements" placeholder="List your achievements (one per line)"></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="generate-btn">
+                            <i class="fas fa-paper-plane"></i> Generate Resume
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="preview-section">
+                <div class="preview-header">
+                    <h2>📄 Resume Preview</h2>
+                    <div class="preview-actions">
+                        <button class="download-btn" id="downloadBtn">
+                            <i class="fas fa-download"></i> Download PDF
+                        </button>
+                        <button class="share-btn" id="shareBtn">
+                            <i class="fas fa-share-alt"></i> Share
+                        </button>
+                    </div>
+                </div>
+                <div class="preview-container">
+                    <div class="whatsapp-resume" id="resumePreview">
+                        <!-- Preview content will be dynamically inserted here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="whatsapp.js"></script>
+</body>
+</html>
