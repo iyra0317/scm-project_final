@@ -1,0 +1,635 @@
+/* Amazon Style Resume Builder CSS */
+:root {
+    --amazon-orange: #FF9900;
+    --amazon-blue: #232F3E;
+    --amazon-light-gray: #F3F3F3;
+    --amazon-dark-gray: #131921;
+    --amazon-text: #111111;
+    --amazon-border: #DDDDDD;
+    --amazon-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--amazon-light-gray);
+    color: var(--amazon-text);
+}
+
+.amazon-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.amazon-header {
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    background-color: var(--amazon-blue);
+    color: white;
+    border-radius: 8px;
+}
+
+.amazon-header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.amazon-header .logo img {
+    width: 48px;
+    height: 48px;
+}
+
+.amazon-header h1 {
+    font-size: 2rem;
+    color: white;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+/* Navigation Section */
+.navigation-section {
+    margin-bottom: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--amazon-shadow);
+}
+
+.nav-container {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+.nav-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    min-width: 100px;
+}
+
+.nav-option:hover {
+    background-color: var(--amazon-light-gray);
+}
+
+.nav-option.active {
+    background-color: var(--amazon-orange);
+    color: white;
+}
+
+.nav-option span {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Form Section */
+.amazon-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.form-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--amazon-shadow);
+}
+
+.form-group {
+    display: none;
+    margin-bottom: 2rem;
+}
+
+.form-group.active {
+    display: block;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--amazon-orange);
+}
+
+.section-header h2 {
+    font-size: 1.5rem;
+    color: var(--amazon-blue);
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--amazon-orange);
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    border: 1px solid var(--amazon-border);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--amazon-orange);
+    box-shadow: 0 0 0 2px rgba(255, 153, 0, 0.2);
+}
+
+.description-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.description-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.generate-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--amazon-orange);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.generate-btn:hover {
+    background-color: #e68a00;
+}
+
+/* Preview Section */
+.preview-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--amazon-shadow);
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--amazon-orange);
+}
+
+.preview-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.download-btn,
+.share-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn {
+    background-color: var(--amazon-orange);
+    color: white;
+}
+
+.share-btn {
+    background-color: var(--amazon-blue);
+    color: white;
+}
+
+.download-btn:hover,
+.share-btn:hover {
+    opacity: 0.9;
+}
+
+.preview-container {
+    background-color: white;
+    border: 1px solid var(--amazon-border);
+    border-radius: 4px;
+    padding: 2rem;
+    min-height: 500px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .amazon-main {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-container {
+        justify-content: flex-start;
+    }
+
+    .nav-option {
+        min-width: 80px;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group.active {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* --- Amazon Screenshot Resume Styles --- */
+.amazon-resume-screenshot-style {
+    background: #fff;
+    border: 1px solid var(--amazon-border);
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    box-shadow: var(--amazon-shadow);
+    margin: 0 auto;
+    max-width: 1100px;
+}
+.amazon-topbar {
+    display: flex;
+    align-items: center;
+    background: var(--amazon-dark-gray);
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    gap: 1.5rem;
+    font-size: 1rem;
+}
+.amazon-logo-bar {
+    height: 32px;
+    margin-right: 1rem;
+}
+.amazon-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 220px;
+}
+.amazon-location {
+    font-size: 0.95rem;
+    color: #fff;
+}
+.amazon-bar-center {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.amazon-search-bar {
+    width: 350px;
+    padding: 0.5rem 1rem;
+    border-radius: 4px 0 0 4px;
+    border: none;
+    font-size: 1rem;
+}
+.amazon-search-btn {
+    background: var(--amazon-orange);
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+.amazon-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    min-width: 300px;
+    justify-content: flex-end;
+}
+.amazon-bar-link {
+    color: #fff;
+    font-size: 0.98rem;
+    cursor: pointer;
+}
+.amazon-resume-main {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 2.5rem 2.5rem 2.5rem;
+    background: #fff;
+}
+.amazon-resume-left {
+    flex: 2.2;
+    border-right: 1.5px solid var(--amazon-border);
+    padding-right: 2rem;
+}
+.amazon-resume-right {
+    flex: 1.1;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.resume-contact-block {
+    margin-bottom: 1.2rem;
+}
+.resume-contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    font-size: 0.98rem;
+    color: #333;
+    margin-bottom: 0.2rem;
+}
+.resume-contact-row a {
+    color: var(--amazon-blue);
+    text-decoration: underline;
+}
+.resume-main-info {
+    margin-bottom: 1.2rem;
+}
+.resume-name {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--amazon-blue);
+    margin-bottom: 0.3rem;
+}
+.resume-badge-row {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.resume-badge {
+    background: var(--amazon-orange);
+    color: #fff;
+    padding: 0.2rem 0.7rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+}
+.resume-rating {
+    color: #f5a623;
+    font-weight: 600;
+}
+.resume-answers {
+    color: #007185;
+    font-size: 0.95rem;
+}
+.resume-amazon-links {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.resume-amazon-link {
+    background: #232f3e;
+    color: #fff;
+    padding: 0.15rem 0.7rem;
+    border-radius: 12px;
+    font-size: 0.93rem;
+}
+.for-hire {
+    color: var(--amazon-orange);
+    font-weight: 600;
+}
+.resume-climate {
+    background: #d5f5e3;
+    color: #1a7f37;
+    padding: 0.15rem 0.7rem;
+    border-radius: 12px;
+    font-size: 0.93rem;
+}
+.resume-price-row {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    margin-bottom: 0.2rem;
+}
+.resume-price-old {
+    color: #888;
+    font-size: 0.95rem;
+}
+.resume-price-new {
+    color: #b12704;
+    font-weight: 600;
+    font-size: 0.98rem;
+}
+.resume-stock-row {
+    margin-bottom: 0.7rem;
+}
+.resume-stock {
+    color: #b12704;
+    font-weight: 600;
+    font-size: 0.98rem;
+}
+.resume-description-block {
+    margin-bottom: 1.2rem;
+}
+.resume-description-block h2 {
+    font-size: 1.1rem;
+    color: var(--amazon-blue);
+    margin-bottom: 0.3rem;
+}
+.resume-section-block {
+    margin-bottom: 1.2rem;
+}
+.resume-section-block h2 {
+    font-size: 1.1rem;
+    color: var(--amazon-blue);
+    margin-bottom: 0.3rem;
+}
+.resume-work-item {
+    margin-bottom: 1.1rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid #eee;
+}
+.resume-work-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.2rem;
+}
+.resume-company-logo {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-right: 0.5rem;
+}
+.resume-work-company {
+    font-weight: 700;
+    color: var(--amazon-blue);
+    font-size: 1.05rem;
+    margin-right: 0.5rem;
+}
+.resume-work-title {
+    font-weight: 600;
+    color: #111;
+    margin-left: 0.5rem;
+}
+.resume-work-location, .resume-work-duration {
+    color: #555;
+    font-size: 0.97rem;
+    margin-left: 0.5rem;
+}
+.resume-work-desc {
+    margin-left: 2.5rem;
+    margin-top: 0.2rem;
+    color: #222;
+    font-size: 0.98rem;
+}
+.resume-instock-box {
+    background: #f7f7f7;
+    border: 1.5px solid #e3e6e6;
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+.instock-green {
+    color: #007600;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.instock-qty select {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 0.1rem 0.5rem;
+    font-size: 1rem;
+}
+.resume-education-block {
+    margin-bottom: 1.2rem;
+}
+.resume-education-block h3 {
+    color: var(--amazon-orange);
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+.resume-edu-item {
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid #eee;
+}
+.resume-edu-degree {
+    font-weight: 700;
+    color: var(--amazon-blue);
+    font-size: 1.02rem;
+}
+.resume-edu-school {
+    font-weight: 600;
+    color: #111;
+    font-size: 1rem;
+}
+.resume-edu-location, .resume-edu-duration {
+    color: #555;
+    font-size: 0.97rem;
+}
+.resume-skills-block {
+    margin-bottom: 1.2rem;
+}
+.resume-skills-block h3 {
+    color: var(--amazon-orange);
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+.resume-skills-category {
+    margin-bottom: 0.5rem;
+}
+.skills-label {
+    font-weight: 700;
+    color: var(--amazon-blue);
+    font-size: 0.98rem;
+    margin-right: 0.5rem;
+}
+.resume-skills-category ul {
+    margin-left: 1.2rem;
+    color: #222;
+    font-size: 0.98rem;
+}
+.resume-achievements-block {
+    margin-bottom: 1.2rem;
+}
+.resume-achievements-block h3 {
+    color: var(--amazon-orange);
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+.resume-achievements-block ul {
+    margin-left: 1.2rem;
+    color: #222;
+    font-size: 0.98rem;
+}
+
+/* Responsive for resume preview */
+@media (max-width: 900px) {
+    .amazon-resume-main {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .amazon-resume-left, .amazon-resume-right {
+        padding: 0;
+        border: none;
+    }
+}
+@media (max-width: 600px) {
+    .amazon-topbar {
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 0.95rem;
+        padding: 0.5rem 0.5rem;
+    }
+    .amazon-search-bar {
+        width: 100%;
+    }
+    .amazon-resume-main {
+        padding: 0.5rem;
+    }
+}
+/* --- End Amazon Screenshot Resume Styles --- */ 
