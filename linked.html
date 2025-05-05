@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LinkedIn Style Resume Builder</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <link rel="stylesheet" href="linked.css">
+</head>
+<body>
+<div class="container">
+  <!-- Form Section -->
+  <div class="form-section">
+    <h2>Enter Your Details</h2>
+    <form id="resumeForm">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" id="name" >
+      </div>
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" id="title" >
+      </div>
+      <div class="form-group">
+        <label>Location</label>
+        <input type="text" id="location" >
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="text" id="phone" >
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="email" >
+      </div>
+      <div class="form-group">
+        <label>LinkedIn</label>
+        <input type="url" id="linkedin" >
+      </div>
+      <div class="form-group">
+        <label>GitHub</label>
+        <input type="url" id="github" >
+      </div>
+      <div class="form-group">
+        <label>Website</label>
+        <input type="url" id="website" >
+      </div>
+      <div class="form-group">
+        <label>About</label>
+        <textarea id="about"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Experience (one per line, use " | " for company, " - " for description)</label>
+        <textarea id="experience"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Education (one per line, use " | " for school, " - " for degree, " / " for year/location)</label>
+        <textarea id="education"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Academic Projects (one per line, use " - " for description)</label>
+        <textarea id="projects"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Achievements (one per line)</label>
+        <textarea id="achievements"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Functional Skills (comma separated)</label>
+        <input type="text" id="fskills" >
+      </div>
+      <div class="form-group">
+        <label>Technical Skills (comma separated)</label>
+        <input type="text" id="tskills" >
+      </div>
+      <div class="actions">
+        <button type="button" onclick="updatePreview()">Generate Resume</button>
+        <button type="button" onclick="downloadPDF()">Download PDF</button>
+      </div>
+    </form>
+  </div>
+  <!-- Preview Section -->
+  <div class="preview-section">
+    <div id="resumePreview" class="resume-preview">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+</div>
+<script src="linked.js"></script>
+</body>
+</html>
