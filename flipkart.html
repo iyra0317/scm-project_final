@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flipkart Style Resume Builder</title>
+  <link rel="stylesheet" href="flipkart.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="flipkart-container">
+    <header class="flipkart-header">
+      <div class="logo">
+        <img src="https://e7.pngegg.com/pngimages/946/191/png-clipart-flipkart-e-commerce-logo-bangalore-chief-executive-others-miscellaneous-blue-thumbnail.png" alt="Flipkart Logo">
+        <h1>Flipkart Style Resume Builder</h1>
+      </div>
+      <p class="subtitle">Create your professional resume with Flipkart's signature design</p>
+    </header>
+
+    <div class="navigation-section">
+      <div class="nav-container">
+        <div class="nav-option" data-nav="personal">
+          <span><i class="fa fa-user"></i></span>
+          <p>Personal</p>
+        </div>
+        <div class="nav-option" data-nav="education">
+          <span><i class="fa fa-graduation-cap"></i></span>
+          <p>Education</p>
+        </div>
+        <div class="nav-option" data-nav="experience">
+          <span><i class="fa fa-briefcase"></i></span>
+          <p>Experience</p>
+        </div>
+        <div class="nav-option" data-nav="skills">
+          <span><i class="fa fa-lightbulb"></i></span>
+          <p>Skills</p>
+        </div>
+        <div class="nav-option" data-nav="achievements">
+          <span><i class="fa fa-trophy"></i></span>
+          <p>Achievements</p>
+        </div>
+      </div>
+    </div>
+
+    <main class="flipkart-main">
+      <section class="form-section">
+        <form id="resumeForm">
+          <!-- Personal Information -->
+          <div class="form-group active" data-nav="personal">
+            <div class="section-header">
+              <h2><i class="fa fa-user"></i> Personal Information</h2>
+            </div>
+            <div class="input-grid">
+              <div class="input-group">
+                <span class="input-icon"><i class="fa fa-user"></i></span>
+                <input type="text" name="name" placeholder="Full Name" required>
+              </div>
+              <div class="input-group">
+                <span class="input-icon"><i class="fa fa-briefcase"></i></span>
+                <input type="text" name="title" placeholder="Professional Title" required>
+              </div>
+            </div>
+            <div class="input-grid">
+              <div class="input-group">
+                <span class="input-icon"><i class="fa fa-envelope"></i></span>
+                <input type="email" name="email" placeholder="Email" required>
+              </div>
+              <div class="input-group">
+                <span class="input-icon"><i class="fa fa-phone"></i></span>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+              </div>
+            </div>
+            <div class="input-grid">
+              <div class="input-group">
+                <span class="input-icon"><i class="fa fa-linkedin"></i></span>
+                <input type="url" name="linkedin" placeholder="LinkedIn Profile">
+              </div>
+              <div class="input-group">
+                <span class="input-icon"><i class="fa fa-globe"></i></span>
+                <input type="url" name="website" placeholder="Personal Website">
+              </div>
+            </div>
+            <div class="bio-group">
+              <span class="input-icon"><i class="fa fa-pencil-alt"></i></span>
+              <textarea name="bio" placeholder="Professional Bio" required></textarea>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="form-group" data-nav="education">
+            <div class="section-header">
+              <h2><i class="fa fa-graduation-cap"></i> Education</h2>
+              <button type="button" id="addEducation" class="add-education">Add Education</button>
+            </div>
+            <div id="educationContainer">
+              <div class="education-item">
+                <div class="input-grid">
+                  <div class="input-group">
+                    <span class="input-icon"><i class="fa fa-graduation-cap"></i></span>
+                    <input type="text" name="school[]" placeholder="School/University" required>
+                  </div>
+                  <div class="input-group">
+                    <span class="input-icon"><i class="fa fa-map-marker-alt"></i></span>
+                    <input type="text" name="eduLocation[]" placeholder="Location" required>
+                  </div>
+                  <div class="input-group">
+                    <span class="input-icon"><i class="fa fa-calendar"></i></span>
+                    <input type="text" name="eduDuration[]" placeholder="Duration (e.g., 2016 - 2020)" required>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <span class="input-icon"><i class="fa fa-book"></i></span>
+                  <input type="text" name="degree[]" placeholder="Degree" required>
+                </div>
+                <div class="description-group">
+                  <span class="input-icon"><i class="fa fa-pencil-alt"></i></span>
+                  <textarea name="eduDescription[]" placeholder="Description (one point per line)" required></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience -->
+          <div class="form-group" data-nav="experience">
+            <div class="section-header">
+              <h2><i class="fa fa-briefcase"></i> Work Experience</h2>
+              <button type="button" id="addExperience" class="add-experience">Add Experience</button>
+            </div>
+            <div id="experienceContainer">
+              <div class="experience-item">
+                <div class="input-grid">
+                  <div class="input-group">
+                    <span class="input-icon"><i class="fa fa-building"></i></span>
+                    <input type="text" name="company[]" placeholder="Company Name" required>
+                  </div>
+                  <div class="input-group">
+                    <span class="input-icon"><i class="fa fa-map-marker-alt"></i></span>
+                    <input type="text" name="location[]" placeholder="Location" required>
+                  </div>
+                  <div class="input-group">
+                    <span class="input-icon"><i class="fa fa-calendar"></i></span>
+                    <input type="text" name="duration[]" placeholder="Duration (e.g., Jan 2020 - Present)" required>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <span class="input-icon"><i class="fa fa-briefcase"></i></span>
+                  <input type="text" name="position[]" placeholder="Position" required>
+                </div>
+                <div class="description-group">
+                  <span class="input-icon"><i class="fa fa-pencil-alt"></i></span>
+                  <textarea name="description[]" placeholder="Job Description (one point per line)" required></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div class="form-group" data-nav="skills">
+            <div class="section-header">
+              <h2><i class="fa fa-lightbulb"></i> Skills</h2>
+            </div>
+            <div class="input-group">
+              <span class="input-icon"><i class="fa fa-lightbulb"></i></span>
+              <input type="text" name="skills" placeholder="Enter skills separated by commas" required>
+            </div>
+          </div>
+
+          <!-- Achievements -->
+          <div class="form-group" data-nav="achievements">
+            <div class="section-header">
+              <h2><i class="fa fa-trophy"></i> Achievements</h2>
+            </div>
+            <div class="description-group">
+              <span class="input-icon"><i class="fa fa-trophy"></i></span>
+              <textarea name="achievements" placeholder="Enter achievements (one per line)" required></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="generate-btn">Generate Resume</button>
+        </form>
+      </section>
+
+      <section class="preview-section">
+        <div class="preview-header">
+          <h2>Resume Preview</h2>
+          <div class="preview-actions">
+            <button id="downloadBtn" class="download-btn">Download PDF</button>
+            <button id="shareBtn" class="share-btn">Share</button>
+          </div>
+        </div>
+        <div class="preview-container">
+          <div id="resumePreview"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="flipkart.js"></script>
+</body>
+</html>
