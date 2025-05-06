@@ -1,0 +1,250 @@
+body {
+    background: #181818;
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #e8eaed;
+  }
+  .google-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 32px auto;
+    gap: 24px;
+  }
+  .google-form {
+    flex: 1;
+    background: #202124;
+    border-radius: 12px;
+    padding: 32px;
+    min-width: 320px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  }
+  .google-form h2 {
+    color: #8ab4f8;
+    margin-bottom: 20px;
+  }
+  .form-group {
+    margin-bottom: 14px;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 3px;
+    font-weight: bold;
+    color: #8ab4f8;
+  }
+  .form-group input, .form-group textarea {
+    width: 100%;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #303134;
+    background: #292a2d;
+    color: #e8eaed;
+    font-size: 1em;
+    box-sizing: border-box;
+  }
+  .form-group textarea {
+    resize: vertical;
+    min-height: 40px;
+  }
+  .actions {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+  }
+  .actions button {
+    background: #4285f4;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+  }
+  .actions button:hover {
+    background: #3367d6;
+  }
+  .google-preview {
+    flex: 2.2;
+    background: #202124;
+    border-radius: 12px;
+    padding: 32px 32px 32px 32px;
+    min-width: 0;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+    margin-left: 0;
+  }
+  .google-search-bar {
+    display: flex;
+    align-items: center;
+    background: #303134;
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin-bottom: 28px;
+  }
+  .google-logo {
+    font-size: 2.1em;
+    font-weight: bold;
+    color: #4285f4;
+    margin-right: 12px;
+    font-family: 'Product Sans', Arial, sans-serif;
+  }
+  .google-search-bar input {
+    background: transparent;
+    border: none;
+    color: #e8eaed;
+    font-size: 1.1em;
+    width: 100%;
+    outline: none;
+  }
+  .google-main-content {
+    display: flex;
+    gap: 32px;
+  }
+  .google-main-left {
+    flex: 2;
+  }
+  .google-main-right {
+    flex: 1;
+    max-width: 330px;
+    margin-left: 16px;
+    background: #292a2d;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+  }
+  .google-profile-photo img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4285f4;
+    margin-bottom: 12px;
+    background: #222;
+  }
+  .google-profile-name {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 2px;
+  }
+  .google-profile-title {
+    color: #8ab4f8;
+    font-size: 1.05em;
+    margin-bottom: 2px;
+  }
+  .google-profile-location {
+    color: #b0b0b0;
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+  .google-profile-contact {
+    font-size: 0.98em;
+    color: #e8eaed;
+    margin-bottom: 8px;
+  }
+  .google-profile-contact span {
+    font-weight: bold;
+    color: #34a853;
+  }
+  .google-profile-links {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .google-profile-links a {
+    color: #4285f4;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+  }
+  .google-profile-links a:hover {
+    text-decoration: underline;
+  }
+  .google-profile-summary {
+    color: #e8eaed;
+    font-size: 1em;
+    margin-top: 8px;
+    text-align: center;
+  }
+  .google-section {
+    margin-bottom: 32px;
+  }
+  .google-section h2 {
+    color: #8ab4f8;
+    font-size: 1.15em;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #303134;
+    padding-bottom: 2px;
+    letter-spacing: 0.5px;
+  }
+  .google-job, .google-edu, .google-project {
+    margin-bottom: 18px;
+  }
+  .google-job-header, .google-edu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    font-size: 1.05em;
+    color: #e8eaed;
+    margin-bottom: 4px;
+  }
+  .google-job-title, .google-edu-degree, .google-project-title {
+    font-weight: bold;
+    color: #fff;
+  }
+  .google-job-company, .google-edu-school {
+    color: #8ab4f8;
+  }
+  .google-job-location, .google-edu-location {
+    color: #b0b0b0;
+  }
+  .google-job-dates, .google-edu-date {
+    margin-left: auto;
+    color: #b0b0b0;
+    font-size: 0.98em;
+  }
+  .google-project-title {
+    color: #fbbc05;
+  }
+  .google-section ul {
+    margin: 0 0 0 20px;
+    padding: 0;
+  }
+  .google-section li {
+    margin-bottom: 3px;
+    font-size: 1em;
+    color: #e8eaed;
+  }
+  .google-skills {
+    margin-bottom: 6px;
+  }
+  .google-skill-label {
+    font-weight: bold;
+    color: #34a853;
+    margin-right: 6px;
+  }
+  .google-pdf-btn {
+    background: #4285f4;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 16px;
+    transition: background 0.2s;
+  }
+  .google-pdf-btn:hover {
+    background: #3367d6;
+  }
+  @media (max-width: 1100px) {
+    .google-container { flex-direction: column; }
+    .google-preview { margin-left: 0; }
+  }
+  @media (max-width: 700px) {
+    .google-form, .google-preview { padding: 12px; }
+    .google-preview { font-size: 0.98em; }
+  }
