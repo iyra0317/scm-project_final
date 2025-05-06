@@ -1,8 +1,7 @@
-# FEE Project (Frontend Engineering Project)
+# PROfile -Resume Builder (Source Code Managment Project)
 
 ## Overview
-FEE Project is a frontend engineering project designed to implement modern web technologies for building interactive and responsive user interfaces.
-
+To design and develop an AI-driven Resume Builder that empowers job seekers to create professional, ATS-friendly resumes effortlessly, using intelligent APIs, dynamic templates, and personalized content suggestions.
 ## Features
 - Responsive UI design
 - Optimized performance
