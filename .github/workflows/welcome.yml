@@ -1,0 +1,12 @@
+name: Welcome New Contributor
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Welcome Message
+        run: echo "🎉 Welcome to the project!"
