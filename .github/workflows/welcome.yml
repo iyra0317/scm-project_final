@@ -5,9 +5,20 @@ on:
     types: [opened]
 
 jobs:
+<<<<<<< HEAD
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Welcome Message
+        run: echo "🎉 Welcome to the project!"
+<<<<<<< HEAD
+=======
+=======
    welcome: 
      runs-on: ubuntu-latest
      steps:
        - name: Send Welcome message
          run: echo "~I welcome to the project!"
+>>>>>>> 81f0688b218528d60a8a48af21a51ed5fc13fae4
 
+>>>>>>> 2cf51ccb39fc86233810c4ead43e125be34f5bcf

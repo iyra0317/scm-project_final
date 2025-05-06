@@ -1,4 +1,128 @@
 body {
+<<<<<<< HEAD
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #d62976;
+    object-fit: cover;
+}
+
+.upload-btn {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #d62976;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.upload-btn:hover {
+    text-decoration: underline;
+}
+
+.form-group {
+    margin: 15px 0;
+    text-align: left;
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: none;
+}
+
+.btn {
+    background: linear-gradient(45deg, #fa7e1e, #d62976);
+    color: #fff;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #d62976, #fa7e1e);
+}
+
+.profile-links {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+}
+
+.profile-link {
+    text-decoration: none;
+    color: #d62976;
+    font-size: 14px;
+}
+
+.profile-link:hover {
+    text-decoration: underline;
+}
+
+.resume-output {
+    display: none;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.instagram-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.instagram-icon img {
+    width: 35px;
+    height: 35px;
+}
+
+.form-group i {
+    font-size: 18px;
+    color: #d62976;
+}
+=======
     font-family: 'Segoe UI', Arial, sans-serif;
     background: #fafafa;
     margin: 0;
@@ -201,3 +325,4 @@ body {
     .actions { display: none; }
   }
   
+>>>>>>> 81f0688b218528d60a8a48af21a51ed5fc13fae4

@@ -1,6 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram-Style Resume Builder</title>
+    <link rel="stylesheet" href="instagram.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amazon+Ember:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png" type="image/png">
+
+</head>
+
+    <a href="https://instagram.com/yourprofile" target="_blank" class="instagram-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png" alt="Instagram">
+    </a>
+
+    <div class="container">
+        <h1 style="color: #d62976;">Instagram-Style Resume Builder</h1>
+        <img id="profilePicPreview" src="https://via.placeholder.com/100" alt="Profile Picture" class="profile-pic">
+        <input type="file" id="profilePic" accept="image/*" style="display: none;">
+        <button class="upload-btn" onclick="document.getElementById('profilePic').click()">📸 Upload Profile Picture</button>
+
+        <div class="form-group">
+            <label for="name">👤 Name</label>
+            <input type="text" id="name" placeholder="Enter your name">
+        </div>
+
+        <div class="form-group">
+            <label for="phone">📞 Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number">
+        </div>
+
+        <div class="form-group">
+            <label for="github">🐙 GitHub Profile</label>
+            <input type="url" id="github" placeholder="Enter GitHub URL">
+        </div>
+
+        <div class="form-group">
+            <label for="linkedin">💼 LinkedIn Profile</label>
+            <input type="url" id="linkedin" placeholder="Enter LinkedIn URL">
+        </div>
+
+        <div class="form-group">
+            <label for="instagram">📸 Instagram Profile</label>
+            <input type="url" id="instagram" placeholder="Enter Instagram URL">
+        </div>
+
+        <div class="form-group">
+            <label for="bio">📝 Bio</label>
+            <textarea id="bio" rows="3" placeholder="Write a short bio"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="projects">📚 Academic Projects</label>
+            <textarea id="projects" rows="3" placeholder="Describe your academic projects"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="achievements">🏆 Achievements</label>
+            <textarea id="achievements" rows="3" placeholder="List your achievements"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="location">🌍 Location</label>
+            <input type="text" id="location" placeholder="Enter your location">
+        </div>
+
+        <div class="form-group">
+            <label for="experience">💼 Work Experience</label>
+            <textarea id="experience" rows="3" placeholder="Describe your work experience"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="careerObjective">🎯 Career Objective</label>
+            <textarea id="careerObjective" rows="3" placeholder="Describe your career objective"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="skills">🛠 Skills</label>
+            <textarea id="skills" rows="3" placeholder="List your skills"></textarea>
+        </div>
+
+        <button class="btn" id="generateResume">💼 Generate Resume</button>
+        <button class="btn" id="downloadResume">📥 Download PDF</button>
+
+        <div id="resumeOutput" class="resume-output"></div>
+    </div>
+    <script src="instagram.js"></script>
+</body>
+</html>
+=======
   <meta charset="UTF-8">
   <title>Instagram Style Resume Builder</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
@@ -100,3 +192,4 @@
 <script src="instagram.js"></script>
 </body>
 </html>
+>>>>>>> 81f0688b218528d60a8a48af21a51ed5fc13fae4
