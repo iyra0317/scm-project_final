@@ -1,0 +1,191 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f3f6fb;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    border: 1px solid #e6e9ef;
+    overflow: hidden;
+  }
+  .form-section, .preview-section {
+    flex: 1;
+    padding: 32px;
+    box-sizing: border-box;
+  }
+  .form-section {
+    background: #f3f6fb;
+    border-right: 1px solid #e6e9ef;
+  }
+  .form-section h2 {
+    color: #0073b1;
+  }
+  .form-group {
+    margin-bottom: 18px;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+  }
+  .form-group input, .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    box-sizing: border-box;
+  }
+  .form-group textarea {
+    resize: vertical;
+    min-height: 50px;
+  }
+  .actions {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+  }
+  .actions button {
+    background: #0073b1;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+  }
+  .actions button:hover {
+    background: #005983;
+  }
+  /* LinkedIn-style preview */
+  .resume-preview {
+    width: 794px;
+    min-height: 1123px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    border: 1px solid #e6e9ef;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  .ln-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #e6e9ef;
+    padding-bottom: 16px;
+  }
+  .ln-avatar {
+    width: 72px;
+    height: 72px;
+    background: #e6e9ef;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    color: #0073b1;
+    font-weight: bold;
+  }
+  .ln-info {
+    flex: 1;
+  }
+  .ln-info h2 {
+    margin: 0 0 4px 0;
+    font-size: 1.5em;
+  }
+  .ln-info .title {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 2px;
+  }
+  .ln-info .location {
+    color: #888;
+    font-size: 1em;
+    margin-bottom: 4px;
+  }
+  .ln-contact span {
+    display: inline-block;
+    margin-right: 14px;
+    font-size: 0.98em;
+    color: #555;
+  }
+  .ln-contact a {
+    color: #0073b1;
+    text-decoration: none;
+  }
+  .ln-contact a:hover {
+    text-decoration: underline;
+  }
+  .resume-section {
+    margin-bottom: 18px;
+    page-break-inside: avoid;
+  }
+  .resume-section h3 {
+    margin-bottom: 4px;
+    color: #0073b1;
+    font-size: 1.1em;
+    border-bottom: 1px solid #e6e9ef;
+    padding-bottom: 2px;
+  }
+  .resume-section ul {
+    margin: 0 0 0 16px;
+    padding: 0;
+  }
+  .resume-section li {
+    margin-bottom: 4px;
+  }
+  .ln-job-title {
+    font-weight: bold;
+    color: #222;
+  }
+  .ln-company {
+    color: #0073b1;
+    font-weight: bold;
+  }
+  .ln-job-dates {
+    float: right;
+    color: #888;
+    font-size: 0.97em;
+  }
+  .ln-edu-school {
+    font-weight: bold;
+    color: #222;
+  }
+  .ln-edu-degree {
+    color: #555;
+  }
+  .ln-edu-dates {
+    float: right;
+    color: #888;
+    font-size: 0.97em;
+  }
+  .ln-skill-label {
+    font-weight: bold;
+    margin-right: 8px;
+  }
+  @media (max-width: 900px) {
+    .container { flex-direction: column; }
+    .form-section, .preview-section { border: none; }
+    .resume-preview { width: 100% !important; min-width: unset; }
+  }
+  @media print {
+    body { -webkit-print-color-adjust: exact; }
+    .resume-preview {
+      width: 100% !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    .actions { display: none; }
+  }
+  

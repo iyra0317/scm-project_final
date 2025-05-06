@@ -10,3 +10,7 @@ jobs:
     steps:
       - name: Send Welcome Message
         run: echo "🎉 Welcome to the project!"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2cf51ccb39fc86233810c4ead43e125be34f5bcf
